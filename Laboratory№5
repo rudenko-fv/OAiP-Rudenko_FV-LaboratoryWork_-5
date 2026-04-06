@@ -1,0 +1,50 @@
+using System;
+
+namespace ConsoleApp7
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Задание 1-6: Калорийность");
+
+            Product product = new Product();
+
+            product.Read();
+            product.Display();
+            Console.WriteLine($"\nОбщая калорийность: {product.Power()} ккал");
+
+            Console.ReadKey();
+        }
+    }
+    class Product
+    {
+        private int first;
+        private double second;
+
+        public Product()
+        {
+            first = 0;
+            second = 0.0;
+        }
+        public void Read()
+        {
+            Console.WriteLine("Введите каллорий на 100 грамм:");
+            first = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите  массу продукта (кг)");
+            second = double.Parse(Console.ReadLine());
+        }
+        public void Display()
+        {
+            Console.WriteLine($"Каллорийность {first} калл");
+            Console.WriteLine($"масса {second} кг");
+        }
+        public double Power()
+        {
+            return first * second * 10;
+        }
+    }
+   
+}
+
